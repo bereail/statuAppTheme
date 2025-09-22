@@ -1,35 +1,53 @@
-import Link from "next/link";
-import { Mail, Paperclip } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button"; // ajustá el path si hace falta
-import Image from "next/image";
-import Container from "./shared/container";
+// app/page.tsx
+import FeatureCard from "./FeatureCard";
+import StatueIntro from "./StatueIntro";
 
 const Introduction = () => {
   return (
-    <Container >
-      <div className="text-center" id="home">
-        <h3 className="text-xl mb-3">hello Im</h3>
-        <h1 className="text-4xl font-bold mb-3">Tarrredev</h1>
-        <h2 className="text-2xl text-gray-400">Frontend Developer</h2>
+    <main className="relative isolate">
+      {/* Fondo suave con blobs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 -top-40 aspect-square w-[36rem] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
+        <div className="absolute right-10 -bottom-24 aspect-square w-[28rem] rounded-full bg-secondary/20 blur-3xl" />
+      </div>
 
-        <div className="flex items-center">
-          <div className="flex flex-col md:flex-row gap-4 md:gap-10 mx-auto">
-            <Link href="#contact" className={buttonVariants()}>
-              <Mail className="mr-2 h-4 w-4" />
-              Contacta conmigo
-             </Link>
+      <section
+        aria-labelledby="hero-title"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 space-y-12"
+      >
+        {/* Hero */}
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          {/* Texto */}
+          <div className="space-y-6 text-center lg:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full bg-base-200 px-3 py-1 text-[11px] sm:text-xs font-medium text-base-content/80 ring-1 ring-base-300/60">
+              <span>📍 Rosario</span>
+              <span className="text-base-content/40">•</span>
+              <span>Patrimonio en tu celular</span>
+            </span>
 
-            <Link className={buttonVariants({ variant: 'secondary'})}
-             href="/cv-tarre.pdf" 
-             target="_blank">
-              <Paperclip className="mr-2"/>
-              Descagar CV
-            </Link>
+            <h1 id="hero-title" className="text-4xl sm:text-5xl font-black tracking-tight">
+              Bienvenida a <span className="text-primary">StatuApp</span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-base-content/80 max-w-prose mx-auto lg:mx-0">
+              Explorá el patrimonio por <b>barrio</b>, <b>autor</b> o <b>palabra clave</b>. Mapas,
+              fichas e imágenes optimizadas.
+            </p>
+          </div>
+
+          {/* Tarjeta intro (contenido visual / stats / CTA que tengas) */}
+          <div className="w-full">
+            <div className="card border border-base-200 bg-base-100/80 backdrop-blur supports-[backdrop-filter]:bg-base-100/70 shadow-xl">
+              <div className="card-body p-4 sm:p-6 lg:p-8">
+                <StatueIntro />
+              </div>
+            </div>
           </div>
         </div>
-            <Image src="/profile.png" alt="Profile pic" width={500}  height={500} />
-      </div>
-    </Container>
+
+     
+      </section>
+    </main>
   );
 };
 
