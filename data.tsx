@@ -22,37 +22,32 @@ export const dataAboutMe = [
 ];
 
 export const itemsNavbar = [
-    {
-        id: 1,
-        title: "Home",
-        icon: <Home size={20} />,
-        link: "#home",
-    },
-    {
-        id: 2,
-        title: "User",
-        icon: <UserRound size={20} />,
-        link: "#about-me",
-    },
-    {
-        id: 3,
-        title: "Book",
-        icon: <BookText size={20} />,
-        link: "#services",
-    },
-    {
-        id: 4,
-        title: "Target",
-        icon: <CodeSquare size={20} />,
-        link: "#portfolio",
-    },
-    {
-        id: 5,
-        title: "Home",
-        icon: <Mail size={20} />,
-        link: "#contact",
-    },
+  {
+    id: 1,
+    title: "Home",
+    icon: <Home size={20} />,
+    link: "/",            // 👉 ruta absoluta
+  },
+  {
+    id: 2,
+    title: "Explorar",
+    icon: <UserRound size={20} />,
+    link: "/explorar",      // si la creás como ruta
+  },
+  {
+    id: 3,
+    title: "Estatuas",
+    icon: <BookText size={20} />,
+    link: "/estatuas",    // 👉 cambia de #estatuas a /estatuas
+  },
+  {
+    id: 4,
+    title: "Mapa",
+    icon: <CodeSquare size={20} />,
+    link: "/mapa",        // 👉 si lo vas a tener como ruta
+  }
 ];
+
 
 export const dataSlider = [
     {
@@ -73,49 +68,36 @@ export const dataSlider = [
     },
 ]
 
-export const dataPortfolio = [
+export const dataEstatuas = [
+  {
+    id: 1,
+    title: "Busto de Isaac Newell",
+    image: "/images/estatuas/busto_isacc_newells_2.jpg",
+    urlGithub: "https://github.com/bereail", // lo podés usar como “fuente”
+    urlDemo: "/estatuas/busto-isaac-newell", // 👉 linkea al detalle de la estatua
+  },
+  {
+    id: 2,
+    title: "Monumento a la Madre",
+    image: "/images/estatuas/monumento_madre_rosario_1.jpg",
+    urlGithub: "#!",
+    urlDemo: "/estatuas/monumento-a-la-madre",
+  },
+  {
+    id: 3,
+    title: "Monumento Alem",
+    image: "/images/estatuas/monumento_alem_rosario_1.jpg",
+    urlGithub: "#!",
+    urlDemo: "/estatuas/san-martin",
+  },
     {
-        id: 1,
-        title: "Web Pro",
-        image: "/image-1.jpg",
-        urlGithub: "https://github.com/bereail",
-        urlDemo: "#!",
-    },
-    {
-        id: 2,
-        title: "Desarrollo Web Ágil",
-        image: "/image-2.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 3,
-        title: "Estrategias Web",
-        image: "/image-3.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 4,
-        title: "Navegando Ideas Creativas",
-        image: "/image-4.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 5,
-        title: "Sitios Web Impactantes",
-        image: "/image-5.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 6,
-        title: "Proyectos Web Dinámicos",
-        image: "/image-6.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
+    id: 3,
+    title: "Estatua Carlo Gardel",
+    image: "/images/estatuas/estatua_gardel_casa_tango_1.jpg",
+    urlGithub: "#!",
+    urlDemo: "/estatuas/san-martin",
+  },
+
 ];
 
 
