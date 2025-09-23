@@ -1,118 +1,102 @@
-// components/Portfolio.tsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Title from "./shared/tittle";
 import { buttonVariants } from "./ui/button";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 
-// Si tu data ya tiene estos campos, listo. Si no, agregalos poco a poco.
-type EstatuaItem = {
-  id: string | number;
-  title: string;
-  image: string;
-  slug?: string; // ej: "busto-isaac-newell"
-  urlGithub?: string;
-  urlDemo?: string;
-  resumen_corto?: string;
-  autor?: { nombre?: string };
-  anio?: number;
-  material?: string;
-  ubicacion?: { nombre?: string };
-};
-
-// IMPORTANTE: tu import real
-import { dataEstatuas } from "@/data";
+import { mergeEstatuas } from "@/app/src/utils/estatuas";
 
 const Portfolio = () => {
+  const dataEstatuas = mergeEstatuas(); // 👈 ya tenés {title, image, resumen_corto, urlDemo, ...}
+
   return (
-    <div className="p-4 max-w-4xl md:py-24 mx-auto" id="portfolio">
-      <Title title="Portfolio" subtitle="Estatuas cargadas 🗿" />
+    <section className="p-4 md:py-24 mx-auto max-w-6xl" id="Estatuas">
+      <Title title="" subtitle="Estatuas cargadas 🗿" />
 
-      <div className="grid md:grid-cols-3 gap-14 mt-4">
-        {dataEstatuas.map((data: EstatuaItem) => {
-          const detalleHref = data.slug
-            ? `/estatuas/${data.slug}`
-            : (data.urlDemo ?? "#");
+      <Carousel className="mt-8" opts={{ align: "start", loop: true }}>
+        <CarouselContent className="gap-6">
+          {dataEstatuas.map((data) => {
+            const detalleHref = data.urlDemo || (data.slug ? `/estatuas/${data.slug}` : "#");
+            const resumen = data.resumen_corto ?? null;
 
-          return (
-            <div key={data.id} className="rounded-2xl bg-card p-4 shadow-sm">
-              <h3 className="text-xl mb-4">{data.title}</h3>
+            return (
+              <CarouselItem key={data.id} className="basis-full sm:basis-1/2 md:basis-1/3">
+                <article className="h-full rounded-2xl bg-card p-4 shadow-sm border border-border">
+                  <h3 className="text-lg font-semibold mb-4 line-clamp-2">{data.title}</h3>
 
-              {/* Imagen con mini info en HoverCard */}
-              <HoverCard openDelay={100} closeDelay={100}>
-                <HoverCardTrigger asChild>
-                  <div className="relative w-full overflow-hidden rounded-2xl">
-                    {/* Mantiene proporción y recorta prolijo */}
-                    <div className="relative aspect-square">
-                      <Image
-                        src={data.image}
-                        alt={data.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 300px"
-                      />
-                    </div>
+                  <HoverCard openDelay={100} closeDelay={100}>
+                    <HoverCardTrigger asChild>
+                      <button
+                        type="button"
+                        className="relative w-full overflow-hidden rounded-2xl focus:outline-none focus:ring-2 focus:ring-ring"
+                        aria-label={`Más info de ${data.title}`}
+                      >
+                        <div className="relative aspect-square">
+                          <Image
+                            src={data.image}
+                            alt={data.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        </div>
+                      </button>
+                    </HoverCardTrigger>
+
+                    <HoverCardContent className="w-80">
+                      {resumen ? (
+                        <p className="text-sm text-muted-foreground">{resumen}</p>
+                      ) : (
+                        <p className="text-sm italic text-muted-foreground">Sin resumen disponible.</p>
+                      )}
+                      <div className="mt-3">
+                        <Link href={detalleHref} className={buttonVariants({ size: "sm" })}>
+                          Ver detalle
+                        </Link>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+
+                  <div className="mt-5 flex gap-3">
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <button
+                          type="button"
+                          className={buttonVariants({ variant: "outline", size: "sm" })}
+                          aria-label={`Ver info de ${data.title}`}
+                        >
+                          Ver info
+                        </button>
+                      </PopoverTrigger>
+                      <PopoverContent side="top" align="start" sideOffset={8} className="max-w-xs text-sm bg-popover border border-border">
+                        <p className="font-medium">{data.title}</p>
+                        <p className="mt-1 text-muted-foreground">{resumen ?? "Sin resumen disponible."}</p>
+                        <div className="mt-3">
+                          <Link href={detalleHref} className={buttonVariants({ size: "sm" })}>
+                            Ver detalle
+                          </Link>
+                        </div>
+                      </PopoverContent>
+                    </Popover>
+
+                    <Link className={buttonVariants({ size: "sm" })} href={detalleHref}>
+                      Ver detalle
+                    </Link>
                   </div>
-                </HoverCardTrigger>
+                </article>
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
 
-                <HoverCardContent className="w-80">
-                  {/* MINI INFO */}
-                  {data.resumen_corto && (
-                    <p className="text-sm text-muted-foreground">
-                      {data.resumen_corto}
-                    </p>
-                  )}
-
-                  <div className="mt-3 grid gap-1 text-sm">
-                    {data.autor?.nombre && (
-                      <div>
-                        <b>Autor:</b> {data.autor.nombre}
-                      </div>
-                    )}
-                    {data.anio && (
-                      <div>
-                        <b>Año:</b> {data.anio}
-                      </div>
-                    )}
-                    {data.material && (
-                      <div>
-                        <b>Material:</b> {data.material}
-                      </div>
-                    )}
-                    {data.ubicacion?.nombre && (
-                      <div>
-                        <b>Ubicación:</b> {data.ubicacion.nombre}
-                      </div>
-                    )}
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
-
-              {/* Botones */}
-              <div className="mt-5 flex gap-3">
-                {data.urlGithub && (
-                  <Link
-                    className={buttonVariants({ variant: "outline" })}
-                    href={data.urlGithub}
-                    target="_blank"
-                  >
-                    Ver Info
-                  </Link>
-                )}
-
-                <Link className={buttonVariants()} href={detalleHref}>
-                  Ver detalle
-                </Link>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+        <CarouselPrevious className="left-2" />
+        <CarouselNext className="right-2" />
+      </Carousel>
+    </section>
   );
 };
 

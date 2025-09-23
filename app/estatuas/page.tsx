@@ -1,4 +1,4 @@
-// app/statues/page.tsx
+/*// app/statues/page.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { mapPaginated, toStatueListItem } from "../src/data/statues";
@@ -39,3 +39,4 @@ export default async function StatuesIndex() {
     </section>
   );
 }
+*/

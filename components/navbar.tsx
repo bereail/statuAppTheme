@@ -1,4 +1,4 @@
-import { itemsNavbar } from "@/data";
+import { itemsNavbar } from "@/data/navbar";
 import Link from "next/link";
 import { ToggleTheme } from "./toggle-theme";
 

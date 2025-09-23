@@ -1,4 +1,4 @@
-import { dataServices } from "@/data";
+import { dataServices } from "@/data/navbar";
 import Title from "./shared/tittle";
 import { Check } from "lucide-react";
 

@@ -3,9 +3,8 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { Statue } from "@/app/src/types/statue";
-
-type Props = { initialData: Statue[] };
+import type { StatueDetail } from "@/app/src/types/statue"; 
+type Props = { initialData: StatueDetail[] };
 
 export default function StatuesExplorer({ initialData }: Props) {
   const [q, setQ] = useState("");
