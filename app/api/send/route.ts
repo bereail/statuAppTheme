@@ -1,29 +1,54 @@
-// re_RDugdJFC_J5F6SLvMBdWN5KVwa7NwwB1B
+// app/api/send/route.ts
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import EmailTemplate from "@/components/ui/email-template";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const runtime = "nodejs";          // usa Node (acceso a process.env)
+export const dynamic = "force-dynamic";   // evita optimización estática
+
+type SendBody = {
+  to?: string[];
+  subject?: string;
+  html?: string;
+  react?: React.ReactNode;
+};
 
 export async function POST(req: Request) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("RESEND_API_KEY ausente");
+    return NextResponse.json(
+      { ok: false, where: "resend", error: { message: "Missing RESEND_API_KEY" } },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(apiKey);
+
+  let body: SendBody = {};
   try {
-    const dataForm = await req.json();
-    try {
-      const data = await resend.emails.send({
-        from: "Acme <onboarding@resend.dev>",
-        to: ["rafatarre@gmail.com"],
-        subject: "Tarredev landing",
-        react: EmailTemplate({
-          firstName: dataForm.username,
-          message: dataForm.message,
-          email: dataForm.email,
-        }),
-        text: "Tarredev",
-      });
-      return Response.json(data);
-    } catch (error) {
-      return Response.json({ error });
-    }
-  } catch (error) {
-    return Response.json({ error });
+    body = (await req.json()) as SendBody;
+  } catch {
+    body = {};
+  }
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "StatuApp <noreply@tudominio>",
+      to: body.to ?? ["tu@mail.com"],
+      subject: body.subject ?? "Test",
+      html: body.html ?? "<p>Hola!</p>",
+      // react: body.react, // si usás plantillas con React
+    });
+
+    if (error) throw new Error(error.message);
+
+    return NextResponse.json({ ok: true, data });
+  } catch (err: unknown) {
+    const e = err instanceof Error ? err : new Error("Unknown error");
+    console.error("Resend error:", e);
+    return NextResponse.json(
+      { ok: false, where: "resend", error: { message: e.message } },
+      { status: 502 }
+    );
   }
 }

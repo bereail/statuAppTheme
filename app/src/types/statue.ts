@@ -1,4 +1,4 @@
-// --- Lo que viene de la API (sin tocar nombres) ---
+// --- Lo que viene de la API (agrego tags opcionales) ---
 export type StatueDetailApi = {
   slug: string;
   titulo: string;
@@ -17,27 +17,29 @@ export type StatueDetailApi = {
     barrio?: string | null; lat?: number | null; lng?: number | null;
   } | null;
   medias?: Array<{ id: number; tipo: "foto"|"audio"|"doc"; url: string; pie?: string|null; credito?: string|null }>;
+  tags?: string[]; // 👈 NUEVO (opcional)
 };
 
-// --- Modelo UI normalizado (opcional) ---
+// --- Modelo UI normalizado ---
 export type StatueDetail = {
   slug: string;
-  title: string; // normalizado desde 'titulo'
+  title: string;
   barrio?: string | null;
-  year?: number | null;      // normalizado desde 'anio'
+  year?: number | null;
   material?: string | null;
-  descriptionMd?: string | null; // desde 'descripcion_md'
-  shortSummary?: string | null;  // 'resumen_corto'
-  longSummary?: string | null;   // 'resumen_extenso'
-  funFact?: string | null;       // 'dato_curioso'
+  descriptionMd?: string | null;
+  shortSummary?: string | null;
+  longSummary?: string | null;
+  funFact?: string | null;
   lat?: number | null;
   lng?: number | null;
   authorName?: string | null;
   locationName?: string | null;
   medias?: Array<{ id: number; kind: "foto"|"audio"|"doc"; url: string; caption?: string|null; credit?: string|null }>;
+  tags?: string[]; // 👈 NUEVO
 };
 
-// Adaptador API -> UI
+// Adaptador API -> UI (mapeando tags)
 export function toStatueDetail(ui: StatueDetailApi): StatueDetail {
   return {
     slug: ui.slug,
@@ -60,14 +62,6 @@ export function toStatueDetail(ui: StatueDetailApi): StatueDetail {
       caption: m.pie ?? null,
       credit: m.credito ?? null,
     })),
+    tags: ui.tags ?? [], // 👈 sin any
   };
 }
-
-// Lista paginada (tu tipo está perfecto)
-export type StatueList = {
-  slug: string;
-  title: string;            // si ya lo normalizás en el front, mantenelo así
-  barrio?: string | null;
-  image?: string | null;
-};
-export type Paginated<T> = { count: number; next: string|null; previous: string|null; results: T[] };

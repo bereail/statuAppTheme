@@ -1,5 +1,4 @@
 // app/page.tsx
-import FeatureCard from "./FeatureCard";
 import StatueIntro from "./StatueIntro";
 
 const Introduction = () => {
