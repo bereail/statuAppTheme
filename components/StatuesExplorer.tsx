@@ -149,9 +149,10 @@ export default function StatuesExplorer({ initialData }: Props) {
                   )}
 
                   <div className="card-actions justify-end mt-4">
-                    <Link href={`/estatuas/${s.slug}`} className="btn btn-primary">
-                      Ver ficha
-                    </Link>
+<Link href={`/estatuas/${s.slug}`} className="btn btn-primary">
+  Ver ficha
+</Link>
+
                   </div>
                 </div>
               </li>

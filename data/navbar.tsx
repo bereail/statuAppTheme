@@ -1,4 +1,4 @@
-import { Home, UserRound, BookText, CodeSquare } from "lucide-react";
+import { Home, UserRound, CodeSquare } from "lucide-react";
 
 export const itemsNavbar = [
   { id: 1, title: "Inicio",     icon: <Home size={20} />,      link: "/" },
