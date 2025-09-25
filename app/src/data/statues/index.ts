@@ -347,7 +347,220 @@ El conjunto se convirtió en punto de encuentro para actos patrióticos y escola
       { id: 3, tipo: "foto", url: "/images/estatuas/monumento_san_martin_3.jpg", pie: "Placas conmemorativas en el basamento", credito: "StatuApp" }
     ],
     imagen_url: "/images/estatuas/monumento_san_martin_1.jpg"
-  }
+  },
+
+// 10) MONUMENTO A MANUEL BELGRANO (Plaza Belgrano)
+{
+  slug: "monumento-belgrano",
+  titulo: "Monumento a Manuel Belgrano",
+  anio: 1957,
+  material: "Bronce (figura) y granito (basamento)",
+  barrio: "Plaza Belgrano — Barrio Alberdi",
+  resumen_corto:
+    "Monumento en honor al creador de la Bandera, inaugurado en 1957 en la Plaza Belgrano.",
+  resumen_extenso: `El monumento a **Manuel Belgrano** se inauguró en **1957** en la **Plaza Belgrano**, ubicada en el barrio Alberdi.  
+La obra muestra al prócer en actitud firme, sosteniendo un pliego en la mano, como símbolo de su rol en la creación de la **Bandera Nacional** en Rosario (1812).  
+Se realizó en **bronce** y descansa sobre un **basamento de granito**.`,
+  dato_curioso:
+    "Rosario tiene dos homenajes centrales a Belgrano: este monumento en Plaza Belgrano y el Monumento Nacional a la Bandera.",
+  author: { id: 10, nombre: "No identificado públicamente" },
+  location: {
+    id: 10,
+    nombre: "Plaza Belgrano",
+    barrio: "Alberdi",
+    lat: -32.9185,
+    lng: -60.6841,
+  },
+  lat: -32.9185,
+  lng: -60.6841,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/monumento_belgrano_1.jpg", pie: "Vista general", credito: "StatuApp" },
+     { id: 2, tipo: "foto", url: "/images/estatuas/monumento_belgrano_2.jpg", pie: "Vista general", credito: "StatuApp" },
+      { id: 3, tipo: "foto", url: "/images/estatuas/monumento_belgrano_3.jpg", pie: "Vista general", credito: "StatuApp" },
+  ],
+  imagen_url: "/images/estatuas/monumento_belgrano_1.jpg",
+},
+
+// 11) MONUMENTO A MARIANO MORENO (Plaza Mariano Moreno)
+{
+  slug: "monumento-mariano-moreno",
+  titulo: "Monumento a Mariano Moreno",
+  anio: 1910,
+  material: "Bronce y granito",
+  barrio: "Plaza Mariano Moreno",
+  resumen_corto:
+    "Monumento inaugurado en 1910 en la plaza que lleva su nombre, obra del escultor Arnoldo Zocchi.",
+  resumen_extenso: `El monumento a **Mariano Moreno**, secretario de la Primera Junta, se inauguró en **1910** con motivo del **Centenario de la Revolución de Mayo**.  
+La obra, del escultor italiano **Arnoldo Zocchi**, muestra a Moreno de pie con gesto enérgico, sobre un pedestal de granito adornado con relieves alegóricos.`,
+  dato_curioso:
+    "Forma parte de los monumentos conmemorativos instalados en Rosario durante las celebraciones del Centenario (1910).",
+  author: { id: 11, nombre: "Arnoldo Zocchi" },
+  location: {
+    id: 11,
+    nombre: "Plaza Mariano Moreno",
+    barrio: "Echesortu",
+    lat: -32.9504,
+    lng: -60.6747,
+  },
+  lat: -32.9504,
+  lng: -60.6747,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/mariano_moreno_1.jpg", pie: "Vista general", credito: "StatuApp" },
+     { id: 2, tipo: "foto", url: "/images/estatuas/mariano_moreno_2.jpg", pie: "Vista general", credito: "StatuApp" },
+      { id: 3, tipo: "foto", url: "/images/estatuas/mariano_moreno_3.jpg", pie: "Vista general", credito: "StatuApp" }
+  ],
+  imagen_url: "/images/estatuas/mariano_moreno_1.jpg",
+},
+
+/*// 12) MONUMENTO A LISANDRO DE LA TORRE (Parque Independencia)
+{
+  slug: "monumento-lisandro-de-la-torre",
+  titulo: "Monumento a Lisandro de la Torre",
+  anio: 1946,
+  material: "Bronce y piedra",
+  barrio: "Parque Independencia",
+  resumen_corto:
+    "Monumento al político y orador Lisandro de la Torre, inaugurado en 1946 en el Parque Independencia.",
+  resumen_extenso: `Este monumento homenajea a **Lisandro de la Torre** (1868–1939), senador y líder político de la democracia progresista.  
+Fue inaugurado en **1946** en el Parque Independencia. La obra combina un pedestal de piedra con una figura en bronce que lo representa de pie en actitud oratoria.`,
+  dato_curioso:
+    "Lisandro de la Torre es considerado uno de los políticos más influyentes de Rosario; su busto también figura en otros espacios públicos.",
+  author: { id: 12, nombre: "No identificado públicamente" },
+  location: {
+    id: 12,
+    nombre: "Parque Independencia",
+    barrio: "Centro",
+    lat: -32.9580,
+    lng: -60.6625,
+  },
+  lat: -32.9580,
+  lng: -60.6625,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/monumento_lisandro_torre_1.jpg", pie: "Vista general", credito: "StatuApp" }
+  ],
+  imagen_url: "/images/estatuas/monumento_lisandro_torre_1.jpg",
+},*/
+
+// 9) MONUMENTO A CRISTÓBAL COLÓN (Plaza Italia)
+{
+  slug: "monumento-colon",
+  titulo: "Monumento a Cristóbal Colón",
+  anio: 1892,
+  material: "Mármol de Carrara",
+  barrio: "Centro — Plaza Italia",
+  resumen_corto:
+    "Monumento en mármol inaugurado el 12 de octubre de 1892 en la Plaza Italia, obra de Arsenio Vincenzo.",
+  resumen_extenso: `El monumento a **Cristóbal Colón** se erige en la **Plaza Italia**, inaugurado el **12 de octubre de 1892** para conmemorar los 400 años del descubrimiento de América.  
+La escultura fue realizada por el artista italiano **Arsenio Vincenzo** en **mármol de Carrara**, y representa a Colón de pie, señalando hacia el horizonte.  
+Constituye uno de los primeros monumentos de gran porte emplazados en la ciudad.`,
+  dato_curioso:
+    "Fue inaugurado en coincidencia con el cuarto centenario del viaje de Colón.",
+  author: { id: 9, nombre: "Arsenio Vincenzo" },
+  location: {
+    id: 9,
+    nombre: "Plaza Italia",
+    barrio: "Centro",
+    lat: -32.9452,
+    lng: -60.6399,
+  },
+  lat: -32.9452,
+  lng: -60.6399,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/monumento_colon_1.jpg", pie: "Vista general", credito: "StatuApp" },
+    { id: 2, tipo: "foto", url: "/images/estatuas/monumento_colon_2.jpg", pie: "Detalle", credito: "StatuApp" }
+  ],
+  imagen_url: "/images/estatuas/monumento_colon_1.jpg",
+},
+
+// 10) MONUMENTO A MANUEL BELGRANO (Plaza Belgrano)
+{
+  slug: "monumento-belgrano",
+  titulo: "Monumento a Manuel Belgrano",
+  anio: 1957,
+  material: "Bronce (figura) y granito (basamento)",
+  barrio: "Plaza Belgrano — Barrio Alberdi",
+  resumen_corto:
+    "Monumento en honor al creador de la Bandera, inaugurado en 1957 en la Plaza Belgrano.",
+  resumen_extenso: `El monumento a **Manuel Belgrano** se inauguró en **1957** en la **Plaza Belgrano**, ubicada en el barrio Alberdi.  
+La obra muestra al prócer en actitud firme, sosteniendo un pliego en la mano, como símbolo de su rol en la creación de la **Bandera Nacional** en Rosario (1812).  
+Se realizó en **bronce** y descansa sobre un **basamento de granito**.`,
+  dato_curioso:
+    "Rosario tiene dos homenajes centrales a Belgrano: este monumento en Plaza Belgrano y el Monumento Nacional a la Bandera.",
+  author: { id: 10, nombre: "No identificado públicamente" },
+  location: {
+    id: 10,
+    nombre: "Plaza Belgrano",
+    barrio: "Alberdi",
+    lat: -32.9185,
+    lng: -60.6841,
+  },
+  lat: -32.9185,
+  lng: -60.6841,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/monumento_belgrano_1.jpg", pie: "Vista general", credito: "StatuApp" },
+    { id: 2, tipo: "foto", url: "/images/estatuas/monumento_belgrano_2.jpg", pie: "Vista general", credito: "StatuApp" },
+  ],
+  imagen_url: "/images/estatuas/monumento_belgrano_1.jpg",
+},
+
+// 11) MONUMENTO A MARIANO MORENO (Plaza Mariano Moreno)
+{
+  slug: "monumento-mariano-moreno",
+  titulo: "Monumento a Mariano Moreno",
+  anio: 1910,
+  material: "Bronce y granito",
+  barrio: "Plaza Mariano Moreno",
+  resumen_corto:
+    "Monumento inaugurado en 1910 en la plaza que lleva su nombre, obra del escultor Arnoldo Zocchi.",
+  resumen_extenso: `El monumento a **Mariano Moreno**, secretario de la Primera Junta, se inauguró en **1910** con motivo del **Centenario de la Revolución de Mayo**.  
+La obra, del escultor italiano **Arnoldo Zocchi**, muestra a Moreno de pie con gesto enérgico, sobre un pedestal de granito adornado con relieves alegóricos.`,
+  dato_curioso:
+    "Forma parte de los monumentos conmemorativos instalados en Rosario durante las celebraciones del Centenario (1910).",
+  author: { id: 11, nombre: "Arnoldo Zocchi" },
+  location: {
+    id: 11,
+    nombre: "Plaza Mariano Moreno",
+    barrio: "Echesortu",
+    lat: -32.9504,
+    lng: -60.6747,
+  },
+  lat: -32.9504,
+  lng: -60.6747,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/monumento_mariano_moreno_1.jpg", pie: "Vista general", credito: "StatuApp" }
+  ],
+  imagen_url: "/images/estatuas/monumento_mariano_moreno_1.jpg",
+},
+
+/*// 12) MONUMENTO A LISANDRO DE LA TORRE (Parque Independencia)
+{
+  slug: "monumento-lisandro-de-la-torre",
+  titulo: "Monumento a Lisandro de la Torre",
+  anio: 1946,
+  material: "Bronce y piedra",
+  barrio: "Parque Independencia",
+  resumen_corto:
+    "Monumento al político y orador Lisandro de la Torre, inaugurado en 1946 en el Parque Independencia.",
+  resumen_extenso: `Este monumento homenajea a **Lisandro de la Torre** (1868–1939), senador y líder político de la democracia progresista.  
+Fue inaugurado en **1946** en el Parque Independencia. La obra combina un pedestal de piedra con una figura en bronce que lo representa de pie en actitud oratoria.`,
+  dato_curioso:
+    "Lisandro de la Torre es considerado uno de los políticos más influyentes de Rosario; su busto también figura en otros espacios públicos.",
+  author: { id: 12, nombre: "No identificado públicamente" },
+  location: {
+    id: 12,
+    nombre: "Parque Independencia",
+    barrio: "Centro",
+    lat: -32.9580,
+    lng: -60.6625,
+  },
+  lat: -32.9580,
+  lng: -60.6625,
+  medias: [
+    { id: 1, tipo: "foto", url: "/images/estatuas/monumento_lisandro_torre_1.jpg", pie: "Vista general", credito: "StatuApp" }
+  ],
+  imagen_url: "/images/estatuas/monumento_lisandro_torre_1.jpg",
+},
+*/
 ];
 
 

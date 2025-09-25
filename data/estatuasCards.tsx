@@ -56,4 +56,25 @@ export const estatuasCards = [
     image: "/images/estatuas/monumento_san_martin_1.jpg",
     urlGithub: "#!",
   },
+        {
+    id: 9,
+    slug: "monumento-belgrano",
+    title: "Monumento a Manuel Belgrano",
+    image: "/images/estatuas/monumento_belgrano_1.jpg",
+    urlGithub: "#!",
+  },
+          {
+    id: 10,
+    slug: "monumento-mariano-moreno",
+    title: "Monumento a Mariano Moreno",
+    image: "/images/estatuas/mariano_moreno_1.jpg",
+    urlGithub: "#!",
+  },
+    /*        {
+    id: 11,
+    slug: "monumento-lisandro-de-la-torre",
+    title: "Monumento a Lisandro de la Torre",
+    image: "/images/estatuas/monumento_san_martin_1.jpg",
+    urlGithub: "#!",
+  }*/
 ].map((x) => ({ ...x, urlDemo: `/estatuas/${x.slug}` }));
