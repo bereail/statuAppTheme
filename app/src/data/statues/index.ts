@@ -35,6 +35,7 @@ export type StatueDetailApi = {
 };
 
 export const statuesData: StatueDetailApi[] = [
+
   // 1) BUSTO ISAAC NEWELL
   {
     slug: "busto-isaac-newell",
@@ -208,7 +209,147 @@ La obra del escultor **José Gerbino** representa a una mujer en la plenitud de 
     ],
     imagen_url: "/images/estatuas/monumento_madre_rosario_1.jpg",
   },
+
+  // 5) MONUMENTO A LA CONSTITUCIÓN (Plaza 25 de Mayo)
+  {
+    slug: "monumento-a-la-constitucion",
+    titulo: "Monumento a la Constitución",
+    anio: 1855, // si preferís 1856, cambiá aquí y listo
+    material: "Columna jónica de mampostería; verja de hierro",
+    barrio: "Centro",
+    resumen_corto:
+      "Primer monumento público de Rosario: columna jónica con alegoría de la Libertad, inaugurada el 25/05/1855 en el centro de Plaza 25 de Mayo. Fue retirada hacia 1879–1882 y en 1883 se la reemplazó por la Columna a la Libertad de Alejandro Biggi.",
+    resumen_extenso: `Ubicada en el punto central de la **Plaza 25 de Mayo**, la obra —atribuida al arquitecto/escultor **Demetrio Isola**— consistía en una **columna jónica** sobre pedestal con **remate alegórico** y un **cercado de hierro** perimetral. Fue el **primer monumento público** de la ciudad, erigido para conmemorar la **Constitución Nacional de 1853**.
+
+**Cronología breve**  
+- **25/05/1855** (*otras crónicas mencionan **25/05/1856***): inauguración de la columna.  
+- **1879–1882**: deterioro y **retiro/demolición** (algunas versiones hablan de caída por temporal).  
+- **09/07/1883**: inauguración de la **Columna a la Libertad** (Monumento a la Independencia) de **Alejandro Biggi**, que ocupa su lugar.
+
+**Contexto**  
+La pieza, recordada en fuentes como “**Pirámide/Columna de la Constitución**”, representaba el primer intento de monumentalización cívica en Rosario, previo al ciclo monumental de fines del siglo XIX.`,
+    dato_curioso:
+      "En algunas referencias se menciona también a **Tomás Fuhr** en relación con la alegoría del remate. La obra aparece en crónicas con los nombres “Pirámide” o “Columna de la Constitución”, célebre por su **verja de hierro**.",
+    author: { id: 5, nombre: "Demetrio Isola (atr.)" },
+    location: {
+      id: 5,
+      nombre: "Plaza 25 de Mayo",
+      direccion: "Entre Santa Fe, Buenos Aires, Laprida y Córdoba",
+      barrio: "Centro",
+      lat: -32.94717,
+      lng: -60.63337,
+    },
+    lat: -32.94717,
+    lng: -60.63337,
+    medias: [
+      { id: 1, tipo: "foto", url: "/images/estatuas/monumento_constitucion_1.jpg", pie: "Columna en Plaza 25 de Mayo (reconstrucción/archivo)", credito: "StatuApp" },
+      { id: 2, tipo: "foto", url: "/images/estatuas/monumento_constitucion_2.jpg", pie: "Detalle de la base y verja", credito: "StatuApp" },
+      { id: 3, tipo: "foto", url: "/images/estatuas/monumento_constitucion_3.jpg", pie: "Vista histórica de la plaza", credito: "StatuApp" },
+      { id: 4, tipo: "foto", url: "/images/estatuas/monumento_constitucion_4.jpg", pie: "Vista histórica de la plaza", credito: "StatuApp" }
+    ],
+    imagen_url: "/images/estatuas/monumento_constitucion_1.jpg",
+  },
+
+  // 6) COLUMNA A LA LIBERTAD (Plaza 25 de Mayo)
+  {
+    slug: "columna-libertad",
+    titulo: "Columna a la Libertad (Monumento a la Independencia)",
+    anio: 1883,
+    material: "Mármol de Carrara (columna y esculturas)",
+    barrio: "Centro",
+    resumen_corto:
+      "Conjunto monumental de Alejandro Biggi inaugurado el 09/07/1883: columna con la Libertad en la cúspide y estatuas de San Martín, Belgrano, Moreno y Rivadavia en el basamento.",
+    resumen_extenso: `Obra del escultor italiano **Alejandro Biggi** en **mármol de Carrara**, inaugurada el **9 de julio de 1883** en el centro de la **Plaza 25 de Mayo**. El conjunto se organiza en un basamento con cuatro figuras (**San Martín**, **Belgrano**, **Mariano Moreno** y **Bernardino Rivadavia**), del que surge un pedestal **octogonal** y la **columna** coronada por la **Libertad** con **gorro frigio**. La figura sostiene la **bandera argentina** y apoya sus pies en un **yugo** y una **cadena rota**, emblemas de emancipación. Ocupa el sitio del antiguo **Monumento a la Constitución** (1855/56).`,
+    dato_curioso:
+      "Crónicas locales señalan que la obra fue tallada en Italia y trasladada por barco para su montaje en la plaza; se dice que la estatua mira hacia el río Paraná.",
+    author: { id: 6, nombre: "Alejandro Biggi" },
+    location: {
+      id: 6,
+      nombre: "Plaza 25 de Mayo",
+      direccion: "Entre Santa Fe, Buenos Aires, Laprida y Córdoba",
+      barrio: "Centro",
+      lat: -32.94717,
+      lng: -60.63337,
+    },
+    lat: -32.94717,
+    lng: -60.63337,
+    medias: [
+      { id: 1, tipo: "foto", url: "/images/estatuas/columna_libertad_1.jpg", pie: "Vista general", credito: "StatuApp" },
+      { id: 2, tipo: "foto", url: "/images/estatuas/columna_libertad_2.jpg", pie: "La Libertad (detalle)", credito: "StatuApp" },
+      { id: 3, tipo: "foto", url: "/images/estatuas/columna_libertad_3.jpg", pie: "La Libertad (detalle)", credito: "StatuApp" },
+      { id: 4, tipo: "foto", url: "/images/estatuas/columna_libertad_4.webp", pie: "Próceres en la base", credito: "StatuApp" }
+    ],
+    imagen_url: "/images/estatuas/columna_libertad_rosario_1.jpg",
+  },
+
+  // 7) MONUMENTO A DOMINGO F. SARMIENTO (Plaza Sarmiento)
+  {
+    slug: "monumento-sarmiento",
+    titulo: "Monumento a Domingo Faustino Sarmiento",
+    anio: 1911,
+    material: "Bronce y piedra",
+    barrio: "Centro",
+    resumen_corto:
+      "Obra del escultor Víctor de Pol inaugurada el 20 de diciembre de 1911 en la Plaza Sarmiento. Sustituyó a la antigua fuente central y rinde homenaje al educador y presidente argentino.",
+    resumen_extenso: `El **Monumento a Domingo Faustino Sarmiento** se emplazó en el centro de la **Plaza Sarmiento** (ex Plaza Santa Rosa) tras un concurso de maquetas. Fue realizado por el escultor ítalo-argentino **Víctor de Pol** y se inauguró el **20 de diciembre de 1911**, fecha elegida por coincidir con el **centenario del natalicio de Sarmiento**, declarada feriado en toda la provincia de Santa Fe.  
+La obra combina un pedestal de piedra con la figura de **Sarmiento en bronce**, acompañado por una alegoría de la **Historia**, inspirada en la actriz italiana **Aida Laura Argia Gramática**. El monumento fue concebido como hito cívico y cultural en homenaje al rol de Sarmiento como **maestro de América** y reformador educativo.  
+Tras su instalación se modificó la traza urbana: en marzo de 1912 se autorizó la apertura y pavimentación de la calle **San Juan** con una calzada poligonal rodeando el monumento.`,
+    dato_curioso:
+      "El modelo de la figura alegórica de la Historia fue la actriz italiana Aida Gramática. La inauguración se postergó un año por la demora en el traslado de la obra desde Europa.",
+    author: { id: 7, nombre: "Víctor de Pol" },
+    location: {
+      id: 7,
+      nombre: "Plaza Sarmiento",
+      direccion: "Entre San Luis, Entre Ríos, San Juan y Corrientes",
+      barrio: "Centro",
+      lat: -32.95185,
+      lng: -60.64352
+    },
+    lat: -32.95185,
+    lng: -60.64352,
+    medias: [
+      { id: 1, tipo: "foto", url: "/images/estatuas/monumento_sarmiento_1.jpg", pie: "Vista general del monumento", credito: "StatuApp" },
+      { id: 2, tipo: "foto", url: "/images/estatuas/monumento_sarmiento_2.jpg", pie: "Figura de Sarmiento", credito: "StatuApp" },
+      { id: 3, tipo: "foto", url: "/images/estatuas/monumento_sarmiento_3.jpg", pie: "Detalle alegoría de la Historia", credito: "StatuApp" },
+      { id: 4, tipo: "foto", url: "/images/estatuas/monumento_sarmiento.jpg",   pie: "Detalle alegoría de la Historia", credito: "StatuApp" }
+    ],
+    imagen_url: "/images/estatuas/sarmiento_1.jpg"
+  },
+
+  // 8) ESTATUA ECUESTRE DE JOSÉ DE SAN MARTÍN (Plaza San Martín)
+  {
+    slug: "monumento-san-martin",
+    titulo: "Estatua ecuestre de José de San Martín",
+    anio: 1913,
+    material: "Bronce (escultura) y piedra (basamento)",
+    barrio: "Centro",
+    resumen_corto:
+      "Monumento ecuestre en honor al General José de San Martín, inaugurado el 21 de mayo de 1913 en la Plaza San Martín de Rosario. Es una réplica de la estatua de Boulogne-sur-Mer (Francia).",
+    resumen_extenso: `El **Monumento ecuestre a José de San Martín** se ubica en la **Plaza San Martín**, en pleno centro de Rosario. Fue inaugurado el **21 de mayo de 1913** y consiste en una réplica de la célebre estatua emplazada en **Boulogne-sur-Mer (Francia)**, ciudad donde murió el Libertador en 1850.  
+La obra muestra al prócer montado a caballo en actitud de marcha, sobre un **basamento de piedra** con relieves alegóricos y placas conmemorativas. Su instalación formó parte de un plan de la Municipalidad de Rosario para dotar a la ciudad de monumentos cívicos que recordaran a las figuras fundamentales de la historia nacional.  
+El conjunto se convirtió en punto de encuentro para actos patrióticos y escolares, y consolidó a la **Plaza San Martín** como espacio público dedicado al homenaje del Libertador de América.`,
+    dato_curioso:
+      "La estatua fue encargada como réplica de la de Boulogne-sur-Mer, ciudad francesa donde falleció San Martín; varias ciudades argentinas poseen copias similares.",
+    author: { id: 8, nombre: "Réplicas autorizadas del original de Boulogne-sur-Mer" },
+    location: {
+      id: 8,
+      nombre: "Plaza San Martín",
+      direccion: "Entre Córdoba, Dorrego, Moreno y Santa Fe",
+      barrio: "Centro",
+      lat: -32.94297,
+      lng: -60.64643
+    },
+    lat: -32.94297,
+    lng: -60.64643,
+    medias: [
+      { id: 1, tipo: "foto", url: "/images/estatuas/monumento_san_martin_1.jpg", pie: "Vista general del monumento", credito: "StatuApp" },
+      { id: 2, tipo: "foto", url: "/images/estatuas/monumento_san_martin_2.jpg", pie: "Detalle de la figura ecuestre", credito: "StatuApp" },
+      { id: 3, tipo: "foto", url: "/images/estatuas/monumento_san_martin_3.jpg", pie: "Placas conmemorativas en el basamento", credito: "StatuApp" }
+    ],
+    imagen_url: "/images/estatuas/monumento_san_martin_1.jpg"
+  }
 ];
+
 
 // Helper simple (opcional)
 export function getStatueBySlug(slug: string) {

@@ -27,4 +27,33 @@ export const estatuasCards = [
     image: "/images/estatuas/estatua_gardel_casa_tango_1.jpg",
     urlGithub: "#!",
   },
+    {
+    id: 5,
+    slug: "monumento-a-la-constitucion",
+    title: "Monumento a la Constitución",
+    image: "/images/estatuas/monumento_constitucion_1.jpg",
+    urlGithub: "#!",
+  },
+      {
+    id: 7,
+    slug: "columna-libertad",
+    title: "Columna a la Libertad (Monumento a la Independencia)",
+    image: "/images/estatuas/columna_libertad_1.jpg",
+    urlGithub: "#!",
+  },
+
+  {
+    id: 6,
+    slug: "monumento-sarmiento",
+    title: "Monumento a Domingo F. Sarmiento",
+    image: "/images/estatuas/monumento_sarmiento_1.jpg",
+    urlGithub: "#!",
+  },
+    {
+    id: 7,
+    slug: "monumento-san-martin",
+    title: "Monumento a San Martín",
+    image: "/images/estatuas/monumento_san_martin_1.jpg",
+    urlGithub: "#!",
+  },
 ].map((x) => ({ ...x, urlDemo: `/estatuas/${x.slug}` }));

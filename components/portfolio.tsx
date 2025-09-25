@@ -11,7 +11,7 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { mergeEstatuas } from "@/app/src/utils/estatuas";
 
 const Portfolio = () => {
-  const dataEstatuas = mergeEstatuas(); // 👈 ya tenés {title, image, resumen_corto, urlDemo, ...}
+  const dataEstatuas = mergeEstatuas();
 
   return (
     <section className="p-4 md:py-24 mx-auto max-w-6xl" id="Estatuas">
@@ -19,7 +19,7 @@ const Portfolio = () => {
 
       <Carousel className="mt-8" opts={{ align: "start", loop: true }}>
         <CarouselContent className="gap-6">
-          {dataEstatuas.map((data) => {
+          {dataEstatuas.map((data, i) => {
             const detalleHref = data.urlDemo || (data.slug ? `/estatuas/${data.slug}` : "#");
             const resumen = data.resumen_corto ?? null;
 
@@ -35,12 +35,15 @@ const Portfolio = () => {
                         className="relative w-full overflow-hidden rounded-2xl focus:outline-none focus:ring-2 focus:ring-ring"
                         aria-label={`Más info de ${data.title}`}
                       >
-                        <div className="relative aspect-square">
+                        {/* 👉 Mantener caja fija para todas las imágenes */}
+                        <div className="relative w-full aspect-[4/3] bg-muted/30">
                           <Image
                             src={data.image}
                             alt={data.title}
                             fill
-                            className="object-cover"
+                            className="object-contain"   // ← antes: object-cover
+                            draggable={false}
+                            priority={i < 2}             // opcional: primeras 2 con prioridad
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           />
                         </div>

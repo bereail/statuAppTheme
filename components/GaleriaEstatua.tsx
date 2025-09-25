@@ -18,7 +18,7 @@ export default function GaleriaEstatua({
 
   if (!fotos.length) {
     return (
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted grid place-items-center text-muted-foreground">
+      <div className="relative aspect-[4/3] w-full rounded-2xl bg-muted grid place-items-center text-muted-foreground">
         Sin imágenes disponibles
       </div>
     );
@@ -26,25 +26,24 @@ export default function GaleriaEstatua({
 
   return (
     <div className="relative w-full">
-      <Carousel
-        opts={{ loop: true, align: "start" }}
-        className="w-full"
-      >
+      <Carousel opts={{ loop: true, align: "start" }} className="w-full">
         <CarouselContent>
-          {fotos.map((m) => (
+          {fotos.map((m, i) => (
             <CarouselItem key={m.id}>
               <figure>
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                {/* Contenedor con relación de aspecto fija */}
+                <div className="relative w-full aspect-[4/3] rounded-2xl bg-muted/30 overflow-hidden">
                   <Image
                     src={m.url}
                     alt={m.pie || titulo}
                     fill
-                    className="object-cover"
-                    // Dejá unoptimized mientras debugueás y luego quitá esta línea:
-                    // unoptimized
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain"    // 👈 muestra la imagen completa
+                    draggable={false}
+                    priority={i === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
                   />
                 </div>
+
                 {(m.pie || m.credito) && (
                   <figcaption className="mt-2 text-xs text-muted-foreground">
                     {m.pie}{m.pie && m.credito ? " — " : ""}{m.credito}

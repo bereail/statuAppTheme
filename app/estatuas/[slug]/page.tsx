@@ -64,7 +64,7 @@ export default async function StatuePage({
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-10 space-y-6">
-      <Link href="/estatuas" className="text-sm text-muted-foreground hover:underline">
+      <Link href="/" className="text-sm text-muted-foreground hover:underline">
         ← Volver
       </Link>
 
