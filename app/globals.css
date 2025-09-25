@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* No hace falta custom-variant: Tailwind usa .dark por clase */
+/* Modo oscuro por clase */
 html, body { height: 100%; scroll-behavior: smooth; }
 
-/* ====== Mapeo de tokens Tailwind v4 → CSS vars ====== */
+/* ====== Mapeo Tailwind v4 (tokens → clases) ====== */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -23,74 +23,92 @@ html, body { height: 100%; scroll-behavior: smooth; }
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ========= TEMA CLARO (único bloque :root) ========= */
+/* ========= TEMA CLARO ========= */
 :root {
   --radius: 0.65rem;
 
   /* Base */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.141 0.005 285.823); /* gris grafito */
 
   /* Superficies */
-  --card: var(--background);
+  --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
-  --popover: var(--background);
+  --popover: oklch(1 0 0);
   --popover-foreground: var(--foreground);
 
-  /* Marca */
-  --primary: oklch(0.606 0.25 292.717);
-  --primary-foreground: oklch(0.969 0.016 293.756);
+  /* Marca: Amarillo (CTA) */
+  --primary: oklch(91.5% 0.083 100);
+              /* amarillo museo */
+  --primary-foreground: oklch(0.20 0.005 285.8);     /* texto oscuro para contraste */
 
-  /* UI */
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: var(--secondary);
-  --accent-foreground: var(--secondary-foreground);
-  --destructive: oklch(0.577 0.245 27.325);
+  /* Secundarios neutros fríos (piedra) */
+  --secondary: oklch(0.967 0.002 286.3);
+  --secondary-foreground: oklch(0.21 0.006 285.9);
 
-  /* Controles */
+  --muted: oklch(0.967 0.002 286.3);
+  --muted-foreground: oklch(0.55 0.016 285.9);
+
+  /* Acento: BRONCE (sin verdes) */
+  --accent: oklch(0.72 0.09 70);                     /* bronce/cobre */
+  --accent-foreground: oklch(0.19 0.004 285.8);      /* texto oscuro */
+
+  /* Estados / Bordes / Ring */
+  --destructive: oklch(0.57 0.245 27.3);
   --border: oklch(0.92 0.004 286.32);
-  --input: var(--border);
+  --input: oklch(0.92 0.004 286.32);
   --ring: var(--primary);
 
-  /* Sidebar (si usás) */
+  /* Extras opcionales (sin verdes) */
+  --chart-1: oklch(0.76 0.10 70);   /* bronce */
+  --chart-2: oklch(0.65 0.08 40);   /* ámbar/cobre oscuro */
+  --chart-3: oklch(0.55 0.03 280);  /* gris azulado */
+  --chart-4: oklch(0.88 0.18 86);   /* amarillo claro */
+  --chart-5: oklch(0.40 0.02 280);  /* gris piedra */
+
+  /* Sidebar */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--secondary);
-  --sidebar-accent-foreground: var(--secondary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
 }
 
-/* ========= TEMA OSCURO (único bloque .dark) ========= */
+/* ========= TEMA OSCURO ========= */
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
+  --background: oklch(0.141 0.005 285.823);         /* antracita */
+  --foreground: oklch(0.985 0 0);                   /* casi blanco */
 
-  --card: oklch(0.21 0.006 286);
+  --card: oklch(0.21 0.006 286);                    /* obsidian */
   --card-foreground: var(--foreground);
   --popover: oklch(0.21 0.006 286);
   --popover-foreground: var(--foreground);
 
-  --primary: oklch(0.541 0.281 293.009);
-  --primary-foreground: oklch(0.969 0.016 293.756);
+  /* Amarillo marca (ajuste para dark) */
+  --primary: oklch(91.5% 0.083 100);
+           /* amarillo estable */
+  --primary-foreground: oklch(0.12 0.005 285.8);    /* texto muy oscuro p/ badge claros */
 
-  --secondary: oklch(0.274 0.006 286.033);
+  /* Neutros piedra */
+  --secondary: oklch(0.27 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: var(--secondary);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: var(--secondary);
-  --accent-foreground: var(--secondary-foreground);
+  --muted-foreground: oklch(0.70 0.015 286.067);
+
+  /* Acento bronce en dark */
+  --accent: oklch(0.62 0.10 70);                    /* bronce más profundo */
+  --accent-foreground: oklch(0.985 0 0);            /* texto claro */
+
   --destructive: oklch(0.704 0.191 22.216);
 
   --border: oklch(1 0 0 / 10%);
@@ -101,8 +119,8 @@ html, body { height: 100%; scroll-behavior: smooth; }
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--secondary);
-  --sidebar-accent-foreground: var(--secondary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
 }

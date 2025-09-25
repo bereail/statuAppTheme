@@ -29,8 +29,7 @@ const Introduction = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-base-content/80 max-w-prose mx-auto lg:mx-0">
-              Explorá el patrimonio por <b>barrio</b>, <b>autor</b> o <b>palabra clave</b>. Mapas,
-              fichas e imágenes optimizadas.
+            Descubrí las <b>historias ocultas</b> detrás de las esculturas que habitan Rosario. Mapas, autores y anécdotas en tu celular
             </p>
           </div>
 

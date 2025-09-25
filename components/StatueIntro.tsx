@@ -65,7 +65,7 @@ export default function StatueIntro() {
             </p>
           </div>
 
-          <Link href="/estatuas" className={btnSm}>
+          <Link href="/cronologia" className={btnSm}>
             Ver cronología de estatuas en Rosario
           </Link>
         </div>

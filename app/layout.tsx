@@ -1,14 +1,25 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
 import "./globals.css";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import ShowFooter from "@/components/ShowFooter";
 
-const geistSans = Urbanist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Urbanist({ variable: "--font-geist-mono", subsets: ["latin"] });
+import { Inter, Marcellus } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const marcellus = Marcellus({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "StatuApp",
@@ -17,9 +28,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="es" suppressHydrationWarning className={`${inter.variable} ${marcellus.variable}`}>
+      <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
           <main
             className="
               min-h-[70vh]
@@ -29,8 +41,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             {children}
           </main>
-
-          <Navbar />
           <ShowFooter />
         </ThemeProvider>
       </body>
