@@ -58,5 +58,27 @@ export const estatuasDetail = [
     dato_curioso: "La cápsula del tiempo fue robada en 1984; aún se ve el parche ...",
     autor: { nombre: "José Gerbino" },
     ubicacion: { nombre: "Rosedal — Parque de la Independencia", barrio: "Parque Independencia" }
+  },
+  {
+  slug: "monumento-ovidio-lagos",
+  titulo: "Monumento a Ovidio Lagos",
+  anio: 1930,
+  material: "Bronce (busto) sobre pedestal de piedra",
+  barrio: "Parque Independencia",
+  lat: -32.9467,
+  lng: -60.6555,
+  resumen_corto:
+    "Busto en honor a Ovidio Lagos, fundador del diario La Capital, inaugurado en 1930 en Boulevard Oroño frente al Parque Independencia.",
+  resumen_extenso: `El Monumento a **Ovidio Lagos** fue inaugurado en **1930** y se ubica en el tradicional **Boulevard Oroño**, a la altura del Parque Independencia.  
+La obra, realizada por el escultor **José Fioravanti**, consiste en un busto de **bronce** sobre un pedestal de piedra.  
+Lagos, fundador del diario **La Capital** en 1867, fue un pionero del periodismo y defensor de la **libertad de prensa** en Argentina. Su diario continúa siendo el más antiguo en actividad del país.`,
+  dato_curioso:
+    "El diario La Capital, fundado por Lagos en 1867, es el periódico en actividad más antiguo de Argentina.",
+  autor: { nombre: "José Fioravanti" },
+  ubicacion: {
+    nombre: "Boulevard Oroño y Jujuy",
+    barrio: "Parque Independencia"
   }
+}
+
 ];

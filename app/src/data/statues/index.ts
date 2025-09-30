@@ -531,7 +531,68 @@ La obra, del escultor italiano **Arnoldo Zocchi**, muestra a Moreno de pie con g
   ],
   imagen_url: "/images/estatuas/monumento_mariano_moreno_1.jpg",
 },
+// MONUMENTO A OVIDIO LAGOS (Boulevard Oroño)
+{
+  slug: "monumento-ovidio-lagos",
+  titulo: "Monumento a Ovidio Lagos",
+  anio: 1930,
+  material: "Bronce (busto) sobre pedestal de piedra",
+  barrio: "Parque Independencia",
+  resumen_corto:
+    "Busto en honor a Ovidio Lagos, fundador del diario La Capital, inaugurado en 1930 en el Boulevard Oroño, frente al Parque Independencia.",
+  resumen_extenso: `El Monumento a **Ovidio Lagos** fue inaugurado en **1930** y se encuentra en el tradicional **Boulevard Oroño**, a la altura del Parque Independencia.  
+La obra, realizada por el escultor **José Fioravanti**, consiste en un busto de **bronce** que representa a Lagos con porte sobrio y decidido, montado sobre un pedestal de piedra.  
+Ovidio Lagos fue el fundador del diario **La Capital** en 1867, el más antiguo en actividad de la Argentina, y un destacado defensor de la **libertad de prensa**.`,
+  dato_curioso:
+    "El diario La Capital, fundado por Ovidio Lagos, es actualmente el periódico en actividad más antiguo del país.",
+  // 👇 asegurate que el id no choque con otro (cambialo si ya existe)
+  author: { id: 12, nombre: "José Fioravanti" },
+  location: {
+    id: 12,
+    nombre: "Boulevard Oroño y Jujuy",
+    direccion: "Boulevard Oroño y Jujuy",
+    barrio: "Parque Independencia",
+    lat: -32.9467,
+    lng: -60.6555,
+  },
+  // si preferís, podés mover lat/lng al root y quitar de location
+  lat: -32.9467,
+  lng: -60.6555,
+  medias: [
+    {
+      id: 1,
+      tipo: "foto",
+      url: "/images/estatuas/ovidio_lagos_1.jpg",
+      pie: "Vista frontal del busto de Ovidio Lagos",
+      credito: "Archivo Municipal de Rosario",
+    },
+    {
+      id: 2,
+      tipo: "foto",
+      url: "/images/estatuas/ovidio_lagos_2.jpg",
+      pie: "Detalle del busto en bronce sobre pedestal",
+      credito: "Archivo Municipal de Rosario",
+    },
+        {
+      id: 3,
+      tipo: "foto",
+      url: "/images/estatuas/ovidio_lagos_3.jpg",
+      pie: "Detalle del busto en bronce sobre pedestal",
+      credito: "Archivo Municipal de Rosario",
+    },
+        {
+      id: 4,
+      tipo: "foto",
+      url: "/images/estatuas/ovidio_lagos_4.jpg",
+      pie: "Detalle del busto en bronce sobre pedestal",
+      credito: "Archivo Municipal de Rosario",
+    },
+  ],
+  
+  imagen_url: "/images/estatuas/ovidio_lagos_1.jpg",
+}
 
+  
 /*// 12) MONUMENTO A LISANDRO DE LA TORRE (Parque Independencia)
 {
   slug: "monumento-lisandro-de-la-torre",
@@ -561,7 +622,8 @@ Fue inaugurado en **1946** en el Parque Independencia. La obra combina un pedest
   imagen_url: "/images/estatuas/monumento_lisandro_torre_1.jpg",
 },
 */
-];
+  ]
+
 
 
 // Helper simple (opcional)

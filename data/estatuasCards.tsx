@@ -70,6 +70,13 @@ export const estatuasCards = [
     image: "/images/estatuas/mariano_moreno_1.jpg",
     urlGithub: "#!",
   },
+            {
+    id: 11,
+    slug: "monumento-ovidio-lagos",
+    title: "Monumento a Ovidio Lagos",
+    image: "/images/estatuas/ovidio_lagos_1.jpg",
+    urlGithub: "#!",
+  },
     /*        {
     id: 11,
     slug: "monumento-lisandro-de-la-torre",
